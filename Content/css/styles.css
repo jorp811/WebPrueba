@@ -1,0 +1,191 @@
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(146, 145, 147);
+    padding: 10px;
+    font-size: 14px;
+    color: #151515;
+}
+.imgportada{
+    height: 40px;
+    width: 98px;
+    margin-left: 40px;
+}
+.imagenportada{
+    width: 200;
+    height: 300;
+}
+/* ======================== */
+.container{
+    max-width: 100%; /*Limits the width of the container but let's it get smaller if needed.*/
+    margin: 0 auto; /*Center the container horizontally in the middle of the page.*/
+    padding: 12px;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap; /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+    align-items: center; /*Centers the children of a flex container vertically.*/
+    justify-content: space-between; /*Adds space between each child of a flex container.*/
+    background: linear-gradient(90deg, rgba(219,55,71,1) 21%, rgba(129,0,94,1) 50%, rgba(28,83,127,1) 100%);
+    border-radius: 10px;
+    border-style: solid;
+    
+
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+}
+.logo{
+    margin-right: 50px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 35px; /*Applies right and bottom spacing between children inside a flex or grid container.*/
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    
+}
+#toggler,
+.navbar label{
+    display: none;/*Hide the checkbox and label on large screens.*/
+}
+/*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+@media screen and 
+(max-width: 800px){
+    .menu{
+        width: 100%;
+        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden; /*Hides the overflowing content.*/
+    }
+    .list{
+        flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label{
+        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        align-items: center;
+        cursor: pointer;
+    }
+    /* 
+        The general sibling selector (~) selects all elements that are next siblings of #toggler.
+        In this case we target the .menu and we turn the height back to 100% to show the menu.
+    */
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+.seccionportada{
+    background-color: rgb(131, 15, 125);
+    max-width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: dotted; 
+}
+/*GRID PORTADA*/
+.flexbox_1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0px -10px;
+    padding: 10PX;
+  }
+  
+  .item_1 {
+    box-sizing: border-box;
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 0px 10px;
+  }
+  
+  .content_1 {
+    color: #242424;
+    background-color: rgb(125, 125, 125) ;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    border-style: solid;
+  }
+
+  .flexbox_2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0px -10px;
+    padding: 10PX;
+  }
+  
+  .item_2 {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 0px 10px;
+  }
+  
+  .content_2 {
+    color: #242424;
+    background-color: rgb(108, 124, 175);
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    border-style: none;
+  }
+.indiceinfra{
+    background-color: rgb(122, 124, 101);
+    border-radius: 10px;
+    margin: 10px;
+    border-style:groove;
+}
+
+
+
+
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+  }
+  
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+    background-color: rgb(125, 125, 125);
+  }
+.paginainfra{
+    background-color: white;
+    border-style: ridge;
+    margin: 40px;
+    height: 400px;
+    border-color: turquoise;
+    border-radius: 15px;
+}
+  
